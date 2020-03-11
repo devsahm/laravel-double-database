@@ -17,6 +17,7 @@ Route::get('/', function () {
 Route::get('/see', 'AgentController@launch');
 Route::patch('/generate-referal-code/{id}', 'AgentController@generatecode');
 Route::get('/transactions', 'AgentController@transactions');
+Route::get('/profile', 'AgentController@profile');
 
 Auth::routes();
 // Auth::routes(['verify' => true]);

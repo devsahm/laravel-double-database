@@ -16,23 +16,21 @@
 									<li>
 										<a href="/home">
 											<i class="fa fa-home" aria-hidden="true"></i>
+
 											<span>Dashboard</span>
 										</a>
 									</li>
-									<li class="nav-parent">
-										<a>
-											<i class="fa fa-columns" aria-hidden="true"></i>
+									<li class="nav">
+										<a href="/profile">
+											<i class="fa fa-user"></i>
+											<span>Profile</span>
+										</a>
+									</li>
+									<li class="nav">
+										<a href="/transactions">
+											<i class="fa fa-columns"></i>
 											<span>Transactions</span>
 										</a>
-										<ul class="nav nav-children">
-											<li>
-												<a href="/transactions">
-												   All Transactions
-												</a>
-											</li>
-											
-											</li>
-										</ul>
 									</li>
 									<!-- <li class="nav-parent nav-expanded nav-active">
 										<a>

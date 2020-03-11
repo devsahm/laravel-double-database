@@ -27,6 +27,10 @@ public function launch()
         // $blogs = DB::table('blogs')->orderBy('id', 'desc')->paginate(6);
     }
 
+    public function profile(){
+        return view('agent.profile');
+    }
+
     public function generatecode(Request $request,  $id)
     {
    
