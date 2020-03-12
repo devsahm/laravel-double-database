@@ -38,26 +38,7 @@
 											<span>Pages</span>
 										</a>
 										<ul class="nav nav-children">
-											<li>
-												<a href="pages-signup.html">
-													 Sign Up
-												</a>
-											</li>
-											<li>
-												<a href="pages-signin.html">
-													 Sign In
-												</a>
-											</li>
-											<li>
-												<a href="pages-recover-password.html">
-													 Recover Password
-												</a>
-											</li>
-											<li>
-												<a href="pages-lock-screen.html">
-													 Locked Screen
-												</a>
-											</li>
+											
 											<li class="nav-active">
 												<a href="pages-user-profile.html">
 													 User Profile
@@ -375,7 +356,7 @@
 				
 							<div class="sidebar-widget widget-tasks">
 								<div class="widget-header">
-									<h6>Agent Levels and benefits</h6>
+									<h6>Agent Levels & benefits</h6>
 									<div class="widget-toggle">+</div>
 								</div>
 								<div class="widget-content">
