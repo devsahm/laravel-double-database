@@ -1,13 +1,12 @@
 <!doctype html>
 <html class="fixed">
 	
-<!-- Mirrored from preview.oklerthemes.com/porto-admin/1.5.4/pages-user-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Dec 2016 16:29:10 GMT -->
 <head>
 
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>User Profile | Porto Admin - Responsive HTML5 Template 1.5.4</title>
+		<title>Agent | User Profile</title>
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
 		<meta name="author" content="okler.net">
@@ -97,8 +96,8 @@
 											<ul class="simple-todo-list">
 												<li class="completed">Update Profile Picture</li>
 												<li class="completed">Change Personal Information</li>
-												<li>Update Social Media</li>
-												<li>Follow Someone</li>
+												<!-- <li>Update Social Media</li>
+												<li>Follow Someone</li> -->
 											</ul>
 										</div>
 									</div>
@@ -107,126 +106,8 @@
 							</section>
 
 
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-										<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-									</div>
 
-									<h2 class="panel-title">
-										<span class="label label-primary label-sm text-weight-normal va-middle mr-sm">198</span>
-										<span class="va-middle">Friends</span>
-									</h2>
-								</header>
-								<div class="panel-body">
-									<div class="content">
-										<ul class="simple-user-list">
-											<li>
-												<figure class="image rounded">
-													<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Doe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="/assets/images/%21sample-user.jpg" alt="Joseph Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="/assets/images/%21sample-user.jpg" alt="Joe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-											<li>
-												<figure class="image rounded">
-													<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-												</figure>
-												<span class="title">Joseph Doe Junior</span>
-												<span class="message truncate">Lorem ipsum dolor sit.</span>
-											</li>
-										</ul>
-										<hr class="dotted short">
-										<div class="text-right">
-											<a class="text-uppercase text-muted" href="#">(View All)</a>
-										</div>
-									</div>
-								</div>
-								<div class="panel-footer">
-									<div class="input-group input-search">
-										<input type="text" class="form-control" name="q" id="q" placeholder="Search...">
-										<span class="input-group-btn">
-											<button class="btn btn-default" type="submit"><i class="fa fa-search"></i>
-											</button>
-										</span>
-									</div>
-								</div>
-							</section>
-
-							<section class="panel">
-								<header class="panel-heading">
-									<div class="panel-actions">
-										<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-										<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
-									</div>
-
-									<h2 class="panel-title">Popular Posts</h2>
-								</header>
-								<div class="panel-body">
-									<ul class="simple-post-list">
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="/assets/images/post-thumb-1.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Nullam Vitae Nibh Un Odiosters</a>
-												<div class="post-meta">
-													 Jan 10, 2016
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="/assets/images/post-thumb-2.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Vitae Nibh Un Odiosters</a>
-												<div class="post-meta">
-													 Jan 10, 2016
-												</div>
-											</div>
-										</li>
-										<li>
-											<div class="post-image">
-												<div class="img-thumbnail">
-													<a href="#">
-														<img src="/assets/images/post-thumb-3.jpg" alt="">
-													</a>
-												</div>
-											</div>
-											<div class="post-info">
-												<a href="#">Odiosters Nullam Vitae</a>
-												<div class="post-meta">
-													 Jan 10, 2016
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</section>
+						
 
 						</div>
 						<div class="col-md-8 col-lg-6">
@@ -265,49 +146,7 @@
 											</div>
 										</section>
 
-										<h4 class="mb-xlg">Timeline</h4>
-
-										<div class="timeline timeline-simple mt-xlg mb-md">
-											<div class="tm-body">
-												<div class="tm-title">
-													<h3 class="h5 text-uppercase">November 2016</h3>
-												</div>
-												<ol class="tm-items">
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
-															<p>
-																It's awesome when we find a good solution for our projects, Porto Admin is <span class="text-primary">#awesome</span>
-															</p>
-														</div>
-													</li>
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
-															<p>
-																What is your biggest developer pain point?
-															</p>
-														</div>
-													</li>
-													<li>
-														<div class="tm-box">
-															<p class="text-muted mb-none">7 months ago.</p>
-															<p>
-																Checkout! How cool is that!
-															</p>
-															<div class="thumbnail-gallery">
-																<a class="img-thumbnail lightbox" href="/assets/images/projects/project-4.jpg" data-plugin-options='{ "type":"image" }'>
-																	<img class="img-responsive" width="215" src="/assets/images/projects/project-4.jpg">
-																	<span class="zoom">
-																		<i class="fa fa-search"></i>
-																	</span>
-																</a>
-															</div>
-														</div>
-													</li>
-												</ol>
-											</div>
-										</div>
+										
 									</div>
 									<div id="edit" class="tab-pane">
 
@@ -339,25 +178,7 @@
 													</div>
 												</div>
 											</fieldset>
-											<hr class="dotted tall">
-											<h4 class="mb-xlg">About Yourself</h4>
-											<fieldset>
-												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileBio">Biographical Info</label>
-													<div class="col-md-8">
-														<textarea class="form-control" rows="3" id="profileBio"></textarea>
-													</div>
-												</div>
-												<div class="form-group">
-													<label class="col-xs-3 control-label mt-xs pt-none">Public</label>
-													<div class="col-md-8">
-														<div class="checkbox-custom checkbox-default checkbox-inline mt-xs">
-															<input type="checkbox" checked="" id="profilePublic">
-															<label for="profilePublic"></label>
-														</div>
-													</div>
-												</div>
-											</fieldset>
+											
 											<hr class="dotted tall">
 											<h4 class="mb-xlg">Change Password</h4>
 											<fieldset class="mb-xl">
@@ -391,30 +212,30 @@
 						</div>
 						<div class="col-md-12 col-lg-3">
 
-							<h4 class="mb-md">Sale Stats</h4>
+							<h4 class="mb-md">Profit and Balance Stat</h4>
 							<ul class="simple-card-list mb-xlg">
 								<li class="primary">
-									<h3>488</h3>
-									<p>Nullam quris ris.</p>
+									<h3>{{$today_transaction}}</h3>
+									<p>Today's Transation</p>
 								</li>
 								<li class="primary">
-									<h3>$ 189,000.00</h3>
-									<p>Nullam quris ris.</p>
+									<h3><span>&#8358;</span> {{(float)$profit}}</h3>
+									<p>Total Profit </p>
 								</li>
 								<li class="primary">
-									<h3>16</h3>
-									<p>Nullam quris ris.</p>
+									<h3>{{$agents->count()}}</h3>
+									<p>Total Transaction</p>
 								</li>
 							</ul>
 
-							<h4 class="mb-md">Projects</h4>
+							<h4 class="mb-md">Current Agent Level</h4>
 							<ul class="simple-bullet-list mb-xlg">
 								<li class="red">
-									<span class="title">Porto Template</span>
-									<span class="description truncate">Lorem ipsom dolor sit.</span>
+									<span class="title">Level {{Auth::user()->level}}</span>
+									<!-- <span class="description truncate">Lorem ipsom dolor sit.</span> -->
 								</li>
-								<li class="green">
-									<span class="title">Tucson HTML5 Template</span>
+								<!-- <li class="green">
+									<span class="title">Current Agent Level</span>
 									<span class="description truncate">Lorem ipsom dolor sit amet</span>
 								</li>
 								<li class="blue">
@@ -424,40 +245,10 @@
 								<li class="orange">
 									<span class="title">Tucson Template</span>
 									<span class="description truncate">Lorem ipsom dolor sit.</span>
-								</li>
+								</li> -->
 							</ul>
 
-							<h4 class="mb-md">Messages</h4>
-							<ul class="simple-user-list mb-xlg">
-								<li>
-									<figure class="image rounded">
-										<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Doe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="/assets/images/%21sample-user.jpg" alt="Joseph Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="/assets/images/%21sample-user.jpg" alt="Joe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-								<li>
-									<figure class="image rounded">
-										<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe Junior" class="img-circle">
-									</figure>
-									<span class="title">Joseph Doe Junior</span>
-									<span class="message">Lorem ipsum dolor sit.</span>
-								</li>
-							</ul>
+							
 						</div>
 
 					</div>
@@ -486,47 +277,7 @@
 								</ul>
 							</div>
 			
-							<div class="sidebar-widget widget-friends">
-								<h6>Friends</h6>
-								<ul>
-									<li class="status-online">
-										<figure class="profile-picture">
-											<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-online">
-										<figure class="profile-picture">
-											<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-offline">
-										<figure class="profile-picture">
-											<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-									<li class="status-offline">
-										<figure class="profile-picture">
-											<img src="/assets/images/%21sample-user.jpg" alt="Joseph Doe" class="img-circle">
-										</figure>
-										<div class="profile-info">
-											<span class="name">Joseph Doe Junior</span>
-											<span class="title">Hey, how are you?</span>
-										</div>
-									</li>
-								</ul>
-							</div>
+						
 			
 						</div>
 					</div>

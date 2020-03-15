@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/login');
 });
 Route::get('/see', 'AgentController@launch');
 Route::patch('/generate-referal-code/{id}', 'AgentController@generatecode');

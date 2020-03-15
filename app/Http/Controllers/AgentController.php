@@ -28,7 +28,14 @@ public function launch()
     }
 
     public function profile(){
-        return view('agent.profile');
+        $user_code=Auth::user()->referal_code;
+        $user=DB::connection('mysql2')->table('users')->where('referal_code', $user_code)->get();  
+        $agents=DB::table('agent_profits')->where('agent_id' , Auth::user()->id)->get();
+        $profit= DB::table('agent_profits')->where('agent_id', '=' , Auth::user()->id)->sum('profit');
+        $profit=number_format($profit, 2, '.', ',');
+        $date=date('Y-m-d H:i:s');
+        $today_transaction= DB::table('agent_profits')->where('created_at', $date)->count();
+        return view('agent.profile', compact(['agents', 'user', 'profit', 'today_transaction']));
     }
 
     public function generatecode(Request $request,  $id)

@@ -47,6 +47,7 @@
 						<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> Sign Up</h2>
 					</div>
 					<div class="panel-body">
+						@include('customerror.cerrors')
 					   <form method="POST" action="{{ route('register') }}">
                         @csrf
 							<div class="form-group mb-lg">

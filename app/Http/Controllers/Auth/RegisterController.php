@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
+use DB;
 
 class RegisterController extends Controller
 {
@@ -63,10 +66,20 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+
+$user=DB::connection('mysql2')->table('users')->where('email', '=', Input::get('email'))->first();
+if ($user === null) {
+     dd('scsc');
+          return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+}else{
+dd('scsc');
+    return redirect('/register')->with('cerror', 'It seems you have used the same login credentials to signup on african money platform. Kindly login to your african money account and upgrade to an agent account. ');
+}
+       
     }
 }
