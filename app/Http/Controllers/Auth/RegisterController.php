@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
-use Illuminate\Support\Facades\Input;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 use Auth;
 use DB;
 
@@ -43,6 +44,32 @@ class RegisterController extends Controller
         $this->middleware('guest');
     }
 
+      protected function register(Request $request) {
+      
+        request()->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user=DB::connection('mysql2')->table('users')->where('email', Input::get('email'))->first();
+        if ($user === null) {
+            User::create([
+            'name' => $request->name,
+            'email' =>$request->email,
+            'level'=>$request->level,
+            'password' => Hash::make($request->password),
+        ]);
+
+        }else{
+
+            return back()->with('cerrors', 'It seems you have used the same credentials to signup on african money platform. Kindly login to your african money account and upgrade to an agent account. Thanks');
+           }
+          
+            
+    }
+
+
     /**
      * Get a validator for an incoming registration request.
      *
@@ -56,7 +83,12 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
+        
+       
     }
+
+
+
 
     /**
      * Create a new user instance after a valid registration.
@@ -66,20 +98,10 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-
-$user=DB::connection('mysql2')->table('users')->where('email', '=', Input::get('email'))->first();
-if ($user === null) {
-     dd('scsc');
-          return User::create([
+        return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-
-}else{
-dd('scsc');
-    return redirect('/register')->with('cerror', 'It seems you have used the same login credentials to signup on african money platform. Kindly login to your african money account and upgrade to an agent account. ');
-}
-       
     }
 }

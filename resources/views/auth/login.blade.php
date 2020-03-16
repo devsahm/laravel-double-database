@@ -44,7 +44,7 @@
 
 				<div class="panel panel-sign">
 					<div class="panel-title-sign mt-xl text-right">
-						<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> Sign In</h2>
+						<h2 class="title text-uppercase text-weight-bold m-none" style="background:#50d28a; color: white;"><i class="fa fa-user mr-xs"></i> Sign In</h2>
 					</div>
 					<div class="panel-body">
 						 <form method="POST" action="{{ route('login') }}">
@@ -101,8 +101,8 @@
 									</div>
 								</div>
 								<div class="col-sm-4 text-right">
-									<button type="submit" class="btn btn-primary hidden-xs">Sign In</button>
-									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">Sign In</button>
+									<button type="submit" class="btn btn-primary hidden-xs" style="background: #3d4351; color: white;">Sign In</button>
+									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg" style="background:#3d4351; color: white;" >Sign In</button>
 								</div>
 							</div>
 
@@ -115,13 +115,13 @@
 								<a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
 							</div>
 
-							<p class="text-center">Don't have an account yet? <a href="/register">Sign Up!</a></p>
+							<p class="text-center">Don't have an account yet? <a href="/register" style="color:#50d28a;">Sign Up!</a></p>
 
 						</form>
 					</div>
 				</div>
 
-				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2016. All Rights Reserved.</p>
+				<p class="text-center text-muted mt-md mb-md">&copy; Copyright {{now()->year}}. All Rights Reserved.</p>
 			</div>
 		</section>
 		<!-- end: page -->

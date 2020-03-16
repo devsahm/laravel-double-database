@@ -159,7 +159,7 @@
 													<div class="summary">
 														<h4 class="title">Total Referred User</h4>
 														<div class="info">
-															<strong class="amount">{{$user->count()}}</strong>
+															<strong class="amount">{{$user}}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">

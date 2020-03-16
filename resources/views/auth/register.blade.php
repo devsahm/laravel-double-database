@@ -44,7 +44,7 @@
 
 				<div class="panel panel-sign">
 					<div class="panel-title-sign mt-xl text-right">
-						<h2 class="title text-uppercase text-weight-bold m-none"><i class="fa fa-user mr-xs"></i> Sign Up</h2>
+						<h2 class="title text-uppercase text-weight-bold m-none" style="background: #50d28a; color: white;"><i class="fa fa-user mr-xs"></i> Sign Up</h2>
 					</div>
 					<div class="panel-body">
 						@include('customerror.cerrors')
@@ -52,7 +52,7 @@
                         @csrf
 							<div class="form-group mb-lg">
 								<label>Username</label>
-								
+								<input type="hidden" name="level" value="1">
 								 <input id="name" type="text" class="form-control input-lg @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
                                 @error('name')
@@ -103,7 +103,7 @@
 								</div>
 								<div class="col-sm-4 text-right">
 									<!-- <button type="submit" class="btn btn-primary hidden-xs">Sign Up</button> -->
-									<button type="submit" class="btn btn-primary btn-block btn-lg">Sign Up</button>
+									<button type="submit" class="btn btn-primary btn-block btn-lg" style="background:#3d4351; color: white;">Sign Up</button>
 								</div>
 							</div>
 
@@ -116,13 +116,13 @@
 								<a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
 							</div>
 
-							<p class="text-center">Already have an account? <a href="/login">Sign In!</a></p>
+							<p class="text-center">Already have an account? <a href="/login" style="color: #50d28a">Sign In!</a></p>
 
 						</form>
 					</div>
 				</div>
 
-				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2016. All Rights Reserved.</p>
+				<p class="text-center text-muted mt-md mb-md">&copy; Copyright {{now()->year}}. All Rights Reserved.</p>
 			</div>
 		</section>
 		<!-- end: page -->
@@ -140,6 +140,7 @@
 		<script src="/assets/javascripts/theme.init.js"></script>
 		<!-- Analytics to Track Preview Website -->		<script>		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)		  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');		  ga('create', 'UA-42715764-8', 'auto');		  ga('send', 'pageview');		</script>
 	</body>
+
 
 <!-- Mirrored from preview.oklerthemes.com/porto-admin/1.5.4/pages-signup.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Dec 2016 16:25:55 GMT -->
 </html>

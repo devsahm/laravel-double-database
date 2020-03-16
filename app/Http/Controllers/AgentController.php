@@ -29,7 +29,11 @@ public function launch()
 
     public function profile(){
         $user_code=Auth::user()->referal_code;
-        $user=DB::connection('mysql2')->table('users')->where('referal_code', $user_code)->get();  
+        if( $user_code === null){
+        $user=0;
+        }else{
+         $user=DB::connection('mysql2')->table('users')->where('referal_code', $user_code)->count(); 
+        }
         $agents=DB::table('agent_profits')->where('agent_id' , Auth::user()->id)->get();
         $profit= DB::table('agent_profits')->where('agent_id', '=' , Auth::user()->id)->sum('profit');
         $profit=number_format($profit, 2, '.', ',');
@@ -43,8 +47,9 @@ public function launch()
    
      $agent_id=Auth::user()->id;
      $agent=User::findorFail( $agent_id);
-     $code=rand(10, 500).$agent_id;
+     $code=rand(100, 500).$agent_id;
      $agent->referal_code= $code;
+     $agent->level=1;
      $agent->save();
      return back()->with('success', 'code generated successfully');
     }
