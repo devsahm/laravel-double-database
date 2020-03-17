@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Agent;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -48,18 +49,30 @@ class RegisterController extends Controller
       
         request()->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => 'required|unique:agents|string|email|max:255', 
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
-
         $user=DB::connection('mysql2')->table('users')->where('email', Input::get('email'))->first();
         if ($user === null) {
-            User::create([
+            Agent::create([
             'name' => $request->name,
             'email' =>$request->email,
             'level'=>$request->level,
-            'password' => Hash::make($request->password),
+            'password'=> Hash::make($request->password),
         ]);
+
+        $Afmuser= new User;
+        $Afmuser->setConnection('mysql2');
+        $Afmuser->name=$request->name;
+        $Afmuser->email=$request->email;
+        $Afmuser->password=Hash::make($request->password);
+        $Afmuser->avatar="https://africanmoney.net/storage/users/default.png";
+        $Afmuser->role_id=2;
+        $Afmuser->save();
+
+
+
+            return redirect('/home');
 
         }else{
 

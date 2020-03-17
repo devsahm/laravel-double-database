@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Agent;
 use DB;
 use Auth;
 
@@ -46,12 +47,12 @@ public function launch()
     {
    
      $agent_id=Auth::user()->id;
-     $agent=User::findorFail( $agent_id);
+     $agent=Agent::findorFail( $agent_id);
      $code=rand(100, 500).$agent_id;
      $agent->referal_code= $code;
      $agent->level=1;
      $agent->save();
-     return back()->with('success', 'code generated successfully');
+     return back()->with('success', 'Referral code generated successfully');
     }
 
     public function transactions()
@@ -60,6 +61,14 @@ public function launch()
      $agents=DB::table('agent_profits')->where('agent_id' , Auth::user()->id)->orderBy('id', 'desc')->get(); 
     
      return view('agent.transactions', compact('agents'));  	
+    }
+
+    public function withdrawal()
+    {
+
+     // $agents=DB::table('agent_profits')->where('agent_id' , Auth::user()->id)->orderBy('id', 'desc')->get(); 
+     return view('agent.withdraw');  
+
     }
     
 

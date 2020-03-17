@@ -197,6 +197,7 @@
 										
 											
 											<p class="text-xs" style="font: 70px;">You would get a commission on every transaction made by anyone that signs up to africa money through your referal code</p>
+
 												<form method="post" action="/generate-referal-code/{{Auth::user()->id }}">
 													@csrf
 													@method('PATCH')
@@ -221,6 +222,7 @@
 					
 									<h2 class="panel-title">Referral Code Generated</h2>
 								</header>
+								@include('success')
 								<div class="panel-body">
 									<section class="panel">
 										<div class="panel-body">

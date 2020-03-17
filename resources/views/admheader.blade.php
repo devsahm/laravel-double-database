@@ -79,7 +79,11 @@
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
 								<span class="name">{{Auth::user()->name}}</span>
+								@if(Auth::user()->level==null)
+								<span class="role">No Level</span>
+								@else
 								<span class="role">Level {{Auth::user()->level}}</span>
+								@endif
 							</div>
 			
 							<i class="fa custom-caret"></i>
