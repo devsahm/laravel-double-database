@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Agent;
+use App\AgentWallet;
 use DB;
 use Auth;
 
@@ -65,9 +66,21 @@ public function launch()
 
     public function withdrawal()
     {
+        
+        return view('agent.withdraw');  
+ 
+    }
 
-     // $agents=DB::table('agent_profits')->where('agent_id' , Auth::user()->id)->orderBy('id', 'desc')->get(); 
-     return view('agent.withdraw');  
+    public function withdrawwbalance()
+    {
+
+       $id=Auth::user()->id;
+        $AgentWallet= AgentWallet::findorFail($id);
+        $wallet_balance= (double)$AgentWallet->balance - (double)$request->amount ;
+        $AgentWallet->agent_id= $id;
+        $AgentWallet->activity='-';
+        $AgentWallet->balance=$wallet_balance;
+        $AgentWallet->save();
 
     }
     

@@ -60,7 +60,8 @@ class RegisterController extends Controller
             'level'=>$request->level,
             'password'=> Hash::make($request->password),
         ]);
-
+ 
+        //Adding a new user record in African Money Platform
         $Afmuser= new User;
         $Afmuser->setConnection('mysql2');
         $Afmuser->name=$request->name;

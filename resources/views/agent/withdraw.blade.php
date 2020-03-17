@@ -78,7 +78,7 @@
 											<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
 										</div>
 						
-										<h2 class="panel-title">Form Elements</h2>
+										<h2 class="panel-title">Withrawal</h2>
 									</header>
 									<div class="panel-body">
 										<form class="form-horizontal form-bordered" method="get">
@@ -88,23 +88,23 @@
 						
 						
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputRounded">Amount to be withdrawn</label>
+												<label class="col-md-3 control-label" for="inputRounded">Total Balance</label>
 												<div class="col-md-6">
 													<input type="text" class="form-control input-rounded" id="inputRounded">
 												</div>
 											</div>
 
 											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputRounded">Rounded Input</label>
+												<label class="col-md-3 control-label" for="inputRounded">Amount to be withdrawn </label>
 												<div class="col-md-6">
-													<input type="text" class="form-control input-rounded" id="inputRounded">
+													<input type="number" class="form-control input-rounded" id="inputRounded">
 												</div>
 											</div>
 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputRounded"></label>
-												<div class="col-md-6">
-													<input type="submit" class="btn btn-primary input-rounded" value="Withdraw">
+												<div class="col-md-9">
+													<input type="submit" class="btn btn-primary input-rounded" style="background:#50d38a; color: white;"  value="Withdraw to African Money Wallet">
 												</div>
 											</div>
 
