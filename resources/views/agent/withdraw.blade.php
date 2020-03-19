@@ -81,30 +81,31 @@
 										<h2 class="panel-title">Withrawal</h2>
 									</header>
 									<div class="panel-body">
-										<form class="form-horizontal form-bordered" method="get">
-											
-						
-											
-						
-						
-											<div class="form-group">
-												<label class="col-md-3 control-label" for="inputRounded">Total Balance</label>
-												<div class="col-md-6">
-													<input type="text" class="form-control input-rounded" id="inputRounded">
-												</div>
-											</div>
-
+										<div class="" style="margin: auto;">
+											<h3>Total Wallet Balance:<span>&#8358;</span>  {{$wallet->balance}}</h2>
+										</div>	
+										<p>Note that once your withdrawal is successful, your funds will be automatically sent to your African Money Wallet. </p>
+										@include('success')
+										@include('customerror.cerrors')
+										<form class="form-horizontal form-bordered" action="/withdrawal"  method="post">
+											@csrf
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputRounded">Amount to be withdrawn </label>
 												<div class="col-md-6">
-													<input type="number" class="form-control input-rounded" id="inputRounded">
+													<input type="number" class="form-control input-rounded" name="amount" required>
 												</div>
+
+												@if($errors->has('amount'))
+												 <span style="color: red;">
+													<strong>{{ $errors->first('amount') }}</strong>
+												</span>
+												@endif
 											</div>
 
 											<div class="form-group">
 												<label class="col-md-3 control-label" for="inputRounded"></label>
 												<div class="col-md-9">
-													<input type="submit" class="btn btn-primary input-rounded" style="background:#50d38a; color: white;"  value="Withdraw to African Money Wallet">
+													<button type="submit" class="btn btn-primary input-rounded" style="background:#50d38a; color: white;"  onclick="return confirm('Are you sure you want to make a withdrawal?')"> Withdraw to African Money Wallet</button>
 												</div>
 											</div>
 

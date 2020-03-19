@@ -109,13 +109,13 @@
 												</div>
 												<div class="widget-summary-col">
 													<div class="summary">
-														<h4 class="title">Total Profit</h4>
+														<h4 class="title">Wallet Balance</h4>
 														<div class="info">
-															<strong class="amount"><span>&#8358;</span> {{(float)$profit}}</strong>
+															<strong class="amount"><span>&#8358;</span> {{$wallet}}</strong>
 														</div>
 													</div>
 													<div class="summary-footer">
-														<a class="text-muted text-uppercase">(withdraw)</a>
+														<a href="/withdraw" class="text-muted text-uppercase">(withdraw)</a>
 													</div>
 												</div>
 											</div>

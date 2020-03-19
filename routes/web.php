@@ -19,6 +19,7 @@ Route::patch('/generate-referal-code/{id}', 'AgentController@generatecode');
 Route::get('/transactions', 'AgentController@transactions');
 Route::get('/profile', 'AgentController@profile');
 Route::get('/withdraw', 'AgentController@withdrawal');
+Route::post('/withdrawal', 'AgentController@withdrawwbalance');
 
 Auth::routes();
 // Auth::routes(['verify' => true]);

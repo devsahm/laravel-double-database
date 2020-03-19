@@ -13,7 +13,7 @@ class CreateAgentWalletsTable extends Migration
      */
     public function up()
     {
-        Schema::create('agent_wallets', function (Blueprint $table){
+        Schema::create('agent_wallets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('agent_id');
             $table->string('activity');
