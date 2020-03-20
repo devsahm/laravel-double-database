@@ -75,7 +75,13 @@ public function launch()
 
     public function withdrawal()
     {
+
         $wallet=AgentWallet::findorFail(Auth::user()->id);
+       if(!$wallet){
+        $wallet=0;
+       }else{
+         $wallet=$wallet->balance;
+       }
         return view('agent.withdraw', compact('wallet'));  
  
     }

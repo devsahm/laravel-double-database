@@ -82,7 +82,7 @@
 									</header>
 									<div class="panel-body">
 										<div class="" style="margin: auto;">
-											<h3>Total Wallet Balance:<span>&#8358;</span>  {{$wallet->balance}}</h2>
+											<h3>Total Wallet Balance:<span>&#8358;</span>  {{$wallet}}</h2>
 										</div>	
 										<p>Note that once your withdrawal is successful, your funds will be automatically sent to your African Money Wallet. </p>
 										@include('success')

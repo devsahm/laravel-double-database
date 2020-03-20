@@ -16,7 +16,6 @@ class CreateAgentWalletsTable extends Migration
         Schema::create('agent_wallets', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('agent_id');
-            $table->string('activity');
             $table->string('balance');
             $table->timestamps();
         });

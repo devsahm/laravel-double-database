@@ -115,7 +115,13 @@
 														</div>
 													</div>
 													<div class="summary-footer">
+														@if($agents->count())
 														<a href="/withdraw" class="text-muted text-uppercase">(withdraw)</a>
+														@else
+														<a href="#" class="text-muted text-uppercase">(Can't Withdrawal Yet )</a>
+														@endif
+
+
 													</div>
 												</div>
 											</div>

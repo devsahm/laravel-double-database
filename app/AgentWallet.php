@@ -9,7 +9,6 @@ class AgentWallet extends Model
     protected $fillable=[
     	'id',
     	'agent_id',
-    	'activity',
     	'balance',
     	'created_at',
     	'updated_at',
