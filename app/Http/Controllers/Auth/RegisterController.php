@@ -46,7 +46,7 @@ class RegisterController extends Controller
     }
 
       protected function register(Request $request) {
-      
+      dd('acscsc');
         request()->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => 'required|unique:agents|string|email|max:255', 
@@ -54,7 +54,7 @@ class RegisterController extends Controller
         ]);
         $user=DB::connection('mysql2')->table('users')->where('email', Input::get('email'))->first();
         if ($user === null) {
-            Agent::create([
+            $agent= Agent::create([
             'name' => $request->name,
             'email' =>$request->email,
             'level'=>$request->level,
@@ -71,9 +71,9 @@ class RegisterController extends Controller
         $Afmuser->role_id=2;
         $Afmuser->save();
 
+        auth()->login($agent);
 
-
-            return redirect('/home');
+        return redirect('/home');
 
         }else{
 
