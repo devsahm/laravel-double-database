@@ -42,7 +42,13 @@ public function launch()
         $profit=number_format($profit, 2, '.', ',');
         $date=date('Y-m-d H:i:s');
         $today_transaction= DB::table('agent_profits')->where('created_at', $date)->count();
-        return view('agent.profile', compact(['agents', 'user', 'profit', 'today_transaction']));
+        $wallet=AgentWallet::where('agent_id', Auth::user()->id)->first();
+        if($wallet==null){
+        $wallet=0;
+        }else{
+        $wallet=$wallet->balance;
+        }
+        return view('agent.profile', compact(['agents', 'user', 'profit', 'today_transaction', 'wallet']));
     }
 
     public function generatecode(Request $request,  $id)

@@ -20,6 +20,8 @@ Route::get('/transactions', 'AgentController@transactions');
 Route::get('/profile', 'AgentController@profile');
 Route::get('/withdraw', 'AgentController@withdrawal');
 Route::post('/withdrawal', 'AgentController@withdrawwbalance');
+Route::patch('/updateprofile/{id}', 'ProfileController@updateprofile');
+Route::patch('/updatepassword/{id}', 'ProfileController@updatepassword');
 
 Auth::routes();
 // Auth::routes(['verify' => true]);

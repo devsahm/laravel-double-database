@@ -75,7 +75,7 @@
 					<div id="userbox" class="userbox">
 						<a href="#" data-toggle="dropdown">
 							<figure class="profile-picture">
-								<img src="/assets/images/%21logged-user.jpg" alt="Joseph Doe" class="img-circle" data-lock-picture="/assets/images/%21logged-user.jpg" />
+								<img src="/profileimage/{{Auth::user()->avatar}}" alt="Joseph Doe" class="img-circle" data-lock-picture="/profileimage/{{Auth::user()->avatar}}" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
 								<span class="name">{{Auth::user()->name}}</span>

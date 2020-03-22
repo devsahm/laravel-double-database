@@ -101,7 +101,7 @@
 									<section class="panel panel-featured-left panel-featured-secondary">
 										<div class="panel-body">
 											<div class="widget-summary">
-												<div class="widget-summary-col widget-summary-col-icon">
+												<div class="widget-summary-col widget-summary-col-icon" >
 													<div class="summary-icon bg-secondary">
 														<i class="fa fa-money"></i>
 

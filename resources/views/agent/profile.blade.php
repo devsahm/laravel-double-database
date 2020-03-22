@@ -73,7 +73,7 @@
 							<section class="panel">
 								<div class="panel-body">
 									<div class="thumb-info mb-md">
-										<img src="/assets/images/%21logged-user.jpg" class="rounded img-responsive" alt="John Doe">
+										<img src="/profileimage/{{Auth::user()->avatar}}" class="rounded img-responsive" style=" width: 189; height: 189;" alt="John Doe">
 										<div class="thumb-info-title">
 											<span class="thumb-info-inner">{{ Auth::user()->name}}</span>
 											<span class="thumb-info-type">Level {{ Auth::user()->level }}</span>
@@ -87,15 +87,26 @@
 										</div>
 										<div class="widget-content-collapsed">
 											<div class="progress progress-xs light">
-												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-													60%
+												@if(Auth::user()->lastname==null)
+												<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
+													50%
 												</div>
+												@elseif(Auth::user()->lastname!= null && Auth::user()->avatar!="demo.png")
+												<div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; background:#50d28a; ">
+													100%
+												</div>
+												@endif
 											</div>
 										</div>
 										<div class="widget-content-expanded">
 											<ul class="simple-todo-list">
-												<li class="completed">Update Profile Picture</li>
-												<li class="completed">Change Personal Information</li>
+												@if(Auth::user()->lastname==null)
+												<li class="">Update Profile Picture</li>
+												<li class="">Update Personal Information</li>
+												@elseif(Auth::user()->lastname!= null && Auth::user()->avatar!="demo.png")
+												<li class="completed" style="color: black;">Profile Picture Updated</li>
+												<li class="completed" style="color: black;">Personal Information Update</li>
+												@endif
 												<!-- <li>Update Social Media</li>
 												<li>Follow Someone</li> -->
 											</ul>
@@ -118,7 +129,7 @@
 										<a href="#overview" data-toggle="tab">Overview</a>
 									</li>
 									<li>
-										<a href="#edit" data-toggle="tab">Edit</a>
+										<a href="#edit" data-toggle="tab">Edit Profile</a>
 									</li>
 								</ul>
 								<div class="tab-content">
@@ -149,56 +160,125 @@
 										
 									</div>
 									<div id="edit" class="tab-pane">
-
-										<form class="form-horizontal" method="get">
+										@include('success')
+										@include('customerror.cerrors')
+										<form class="form-horizontal" method="post" action="/updateprofile/{{Auth::user()->id}}" enctype="multipart/form-data">
+											@csrf
+											@method('PATCH')
 											<h4 class="mb-xlg">Personal Information</h4>
 											<fieldset>
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
+													<label class="col-md-3 control-label" for="profileCompany">Email Address</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileFirstName">
+														<input type="email" class="form-control" id="profileCompany" value="{{Auth::user()->email}}" readonly>
 													</div>
 												</div>
+												 
+
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileFirstName">First Name</label>
+													<div class="col-md-8">
+														<input type="text" class="form-control" id="profileFirstName" name="firstname" value="{{Auth::user()->firstname}}">
+														@error('firstname')
+					                                <span class="invalid-feedback" style="color: red;"  role="alert">
+					                                    <strong>{{ $message }}</strong>
+					                                </span>
+					                              @enderror
+													</div>
+												</div>
+												 
+												
+
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileLastName">Last Name</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileLastName">
+														<input type="text" class="form-control" id="profileLastName" name="lastname" value="{{Auth::user()->lastname}}">
+														 @error('lastname')
+					                                <span class="invalid-feedback" style="color: red;"  role="alert">
+					                                    <strong>{{ $message }}</strong>
+					                                </span>
+					                              @enderror
 													</div>
 												</div>
+												
+
+
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileAddress">Address</label>
+													<label class="col-md-3 control-label" for="profileLastName">Phone Number</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileAddress">
+														<input type="text" class="form-control" id="profileLastName" name="phone_number" value="{{Auth::user()->phone_number}}">
+
+														 @error('phone_number')
+					                                <span class="invalid-feedback" style="color: red;"  role="alert">
+					                                    <strong>{{ $message }}</strong>
+					                                </span>
+					                              @enderror
 													</div>
 												</div>
+												
+												
+												
 												<div class="form-group">
-													<label class="col-md-3 control-label" for="profileCompany">Company</label>
+													<label class="col-md-3 control-label" for="profileCompany">Profile Picture</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileCompany">
+														<input type="file" class="form-control"  name="image">
+														 @error('image')
+					                                <span class="invalid-feedback" style="color: red;"  role="alert">
+					                                    <strong>{{ $message }}</strong>
+					                                </span>
+					                              @enderror
 													</div>
 												</div>
+												
+
 											</fieldset>
-											
+
+											<div class="panel-footer">
+												<div class="row">
+													<div class="col-md-9 col-md-offset-3">
+														<button type="submit" class="btn btn-primary" style="background: #50d28a; color: white;">Submit</button>
+														<button type="reset" class="btn btn-default">Reset</button>
+													</div>
+												</div>
+											</div>
+												</form>
+
 											<hr class="dotted tall">
 											<h4 class="mb-xlg">Change Password</h4>
+											<form action="/updatepassword/{{Auth::user()->id}}" method="post">
+												@csrf
+												@method('PATCH')
 											<fieldset class="mb-xl">
+												<div class="form-group">
+													<label class="col-md-3 control-label" for="profileNewPassword">Current Password</label>
+													<div class="col-md-8">
+														<input type="password" class="form-control" id="profileNewPassword" name="oldpassword">
+													</div>
+												</div>
+
+
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPassword">New Password</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPassword">
+														<input type="password" class="form-control" id="profileNewPassword" name="password">
+														@error('password')
+														<span class="invalid-feedback" style="color: red;"  role="alert">
+					                                    <strong>{{ $message }}</strong>
+					                                </span>
+														@enderror
 													</div>
 												</div>
 												<div class="form-group">
 													<label class="col-md-3 control-label" for="profileNewPasswordRepeat">Repeat New Password</label>
 													<div class="col-md-8">
-														<input type="text" class="form-control" id="profileNewPasswordRepeat">
+														<input type="password" class="form-control" id="profileNewPasswordRepeat" name="password_confirmation">
 													</div>
 												</div>
 											</fieldset>
 											<div class="panel-footer">
 												<div class="row">
 													<div class="col-md-9 col-md-offset-3">
-														<button type="submit" class="btn btn-primary">Submit</button>
+														<button type="submit" class="btn btn-primary"  style="background: #50d28a; color: white;">Submit</button>
 														<button type="reset" class="btn btn-default">Reset</button>
 													</div>
 												</div>
@@ -218,20 +298,30 @@
 									<h3>{{$today_transaction}}</h3>
 									<p>Today's Transation</p>
 								</li>
-								<li class="primary">
+								<li class="info">
 									<h3><span>&#8358;</span> {{(float)$profit}}</h3>
 									<p>Total Profit </p>
 								</li>
-								<li class="primary">
+								<li class="primary" style="background:#3d4351; color: white;">
 									<h3>{{$agents->count()}}</h3>
 									<p>Total Transaction</p>
 								</li>
+
+								<li style="background: #50d28a; color: white;">
+									<h3><span>&#8358;</span>{{(float)$wallet}}</h3>
+									<p>Wallet Balance </p>
+								</li>
+
 							</ul>
 
 							<h4 class="mb-md">Current Agent Level</h4>
 							<ul class="simple-bullet-list mb-xlg">
 								<li class="red">
+									@if(Auth::user()->level == null)
+									<span class="title">No Level(Please generate your referral code to earn a level)</span>
+									@else
 									<span class="title">Level {{Auth::user()->level}}</span>
+									@endif
 									<!-- <span class="description truncate">Lorem ipsom dolor sit.</span> -->
 								</li>
 								<!-- <li class="green">

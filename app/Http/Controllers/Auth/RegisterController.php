@@ -46,7 +46,7 @@ class RegisterController extends Controller
     }
 
       protected function register(Request $request) {
-      dd('acscsc');
+   
         request()->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => 'required|unique:agents|string|email|max:255', 
@@ -58,6 +58,7 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' =>$request->email,
             'level'=>$request->level,
+            'avatar'=>'demo.png',
             'password'=> Hash::make($request->password),
         ]);
  

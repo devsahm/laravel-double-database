@@ -32,6 +32,13 @@
 											<span>Transactions</span>
 										</a>
 									</li>
+
+									<li class="nav">
+										<a href="/transactions">
+											<i class="fa fa-list-alt"></i>
+											<span>Generate Statement</span>
+										</a>
+									</li>
 									<!-- <li class="nav-parent nav-expanded nav-active">
 										<a>
 											<i class="fa fa-copy" aria-hidden="true"></i>
