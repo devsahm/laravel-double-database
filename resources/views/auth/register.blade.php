@@ -107,14 +107,14 @@
 								</div>
 							</div>
 
-							<span class="mt-lg mb-lg line-thru text-center text-uppercase">
+							<!-- <span class="mt-lg mb-lg line-thru text-center text-uppercase">
 								<span>or</span>
 							</span>
 
 							<div class="mb-xs text-center">
 								<a class="btn btn-facebook mb-md ml-xs mr-xs">Connect with <i class="fa fa-facebook"></i></a>
 								<a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
-							</div>
+							</div> -->
 
 							<p class="text-center">Already have an account? <a href="/login" style="color: #50d28a">Sign In!</a></p>
 

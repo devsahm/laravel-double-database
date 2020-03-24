@@ -34,7 +34,7 @@
 									</li>
 
 									<li class="nav">
-										<a href="/transactions">
+										<a href="/account-statement">
 											<i class="fa fa-list-alt"></i>
 											<span>Generate Statement</span>
 										</a>
