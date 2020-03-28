@@ -49,12 +49,22 @@
                         </div>
                     @endif
 
-                    <h2>{{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}" style="color: #50d28a;">{{ __('click here to request another') }}</a>.</h2>
+                    {{ __('Before proceeding, please check your email for a verification link.') }}
+                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
                 </div>
-						
+						<!-- <div class="main-error mb-xlg">
+							<h2 class="error-code text-dark text-center text-weight-semibold m-none">500 <i class="fa fa-file"></i></h2>
+							<p class="error-explanation text-center">We're sorry, something went wrong.</p>
+						</div> -->
 					</div>
-				
+					<!-- <div class="col-sm-4">
+						<h4 class="text">Here are some useful links</h4>
+						<ul class="nav nav-list primary">
+							<li><a href="#"><i class="fa fa-caret-right text-dark"></i> Dashboard</a></li>
+							<li><a href="#"><i class="fa fa-caret-right text-dark"></i> User Profile</a></li>
+							<li><a href="#"><i class="fa fa-caret-right text-dark"></i> FAQ's</a></li>
+						</ul>
+					</div> -->
 				</div>
 			</div>
 		</section>

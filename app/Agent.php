@@ -3,15 +3,13 @@
 namespace App;
 
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContract;
 // use Illuminate\Notifications\Notifiable;
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 // use Illuminate\Foundation\Auth\User as Authenticatable;
-
-// class Agent extends Authenticatable implements MustVerifyEmail
-
-class Agent extends Authenticatable
+// class Agent extends Authenticatable
+class Agent extends Authenticatable implements MustVerifyEmail
 {
     
      use Notifiable;

@@ -105,15 +105,28 @@
 									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg" style="background:#3d4351; color: white;" >Sign In</button>
 								</div>
 							</div>
-
+							<div class="row">
+								
+								<div class="col-sm-12 center">
+									<span>
+								 @if (Route::has('password.request'))
+                                    <a class="btn btn-link" style="text-align: center;" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+							</span>
+								</div>
+							</div>
+							
+<!-- 
 							<span class="mt-lg mb-lg line-thru text-center text-uppercase">
 								<span>or</span>
-							</span>
+							</span> -->
 
-							<div class="mb-xs text-center">
+							<!-- <div class="mb-xs text-center">
 								<a class="btn btn-facebook mb-md ml-xs mr-xs">Connect with <i class="fa fa-facebook"></i></a>
 								<a class="btn btn-twitter mb-md ml-xs mr-xs">Connect with <i class="fa fa-twitter"></i></a>
-							</div>
+							</div> -->
 
 							<p class="text-center">Don't have an account yet? <a href="/register" style="color:#50d28a;">Sign Up!</a></p>
 
@@ -137,7 +150,7 @@
 		
 		<!-- Theme Initialization Files -->
 		<script src="/assets/javascripts/theme.init.js"></script>
-		<!-- Analytics to Track Preview Website -->		<script>		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)		  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');		  ga('create', 'UA-42715764-8', 'auto');		  ga('send', 'pageview');		</script>
+		<!-- Analytics to Track Preview Website -->		<!-- <script>		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)		  })(window,document,'script','../../../www.google-analytics.com/analytics.js','ga');		  ga('create', 'UA-42715764-8', 'auto');		  ga('send', 'pageview');		</script> -->
 	</body>
 
 <!-- Mirrored from preview.oklerthemes.com/porto-admin/1.5.4/pages-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 13 Dec 2016 16:25:52 GMT -->

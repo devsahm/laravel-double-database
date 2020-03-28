@@ -19,7 +19,7 @@ class AgentController extends Controller
 
 public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth', 'verified']);
     }
 
 public function launch()
@@ -106,7 +106,7 @@ $this->validate($request, [
 //update AAgent Wallet table with the new balance
 $id=Auth::user()->id;
 $AgentWallet= AgentWallet::findorFail($id);
-if($AgentWallet->balance > $request->amount){
+if($AgentWallet->balance >= $request->amount){
 $wallet_balance= (double)$AgentWallet->balance - (double)$request->amount;
 $AgentWallet->balance=$wallet_balance;
 $AgentWallet->save();

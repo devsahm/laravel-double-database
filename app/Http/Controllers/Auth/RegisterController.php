@@ -73,6 +73,7 @@ class RegisterController extends Controller
         $Afmuser->save();
 
         auth()->login($agent);
+        
 
         return redirect('/home');
 
