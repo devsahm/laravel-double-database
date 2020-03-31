@@ -83,7 +83,6 @@
 								
 								<div class="col-sm-12 text-right center">
 									<!-- <button type="submit" class="btn btn-primary hidden-xs">Sign Up</button> -->
-
 									<button type="submit" class="btn btn-primary btn-block btn-lg" style="background:#3d4351; color: white;">{{ __('Reset Password') }}</button>
 								</div>
 							</div>
